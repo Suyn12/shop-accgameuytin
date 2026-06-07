@@ -1,101 +1,464 @@
-<script>document.addEventListener("contextmenu",(e=>e.preventDefault())),document.onkeydown=function(e){return 123!=e.keyCode&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="I".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="C".charCodeAt(0))&&((!e.ctrlKey||!e.shiftKey||e.keyCode!="J".charCodeAt(0))&&((!e.ctrlKey||e.keyCode!="U".charCodeAt(0))&&void 0))))}</script>
-<!doctype html>
-<html lang=vi>
+
+
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>SHOP ACC VÕ LÂM TÌNH KIẾM 2</title>
-<style>*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}body{background:#0f172a;color:#fff}header{background:linear-gradient(90deg,#f97316,#ea580c);padding:20px;text-align:center}header h1{font-size:38px}header p{margin-top:10px}nav{background:#111827;padding:15px;text-align:center}nav a{color:#fff;text-decoration:none;margin:0 15px;font-weight:700}.hero{text-align:center;padding:60px 20px}.hero h2{color:#fb923c;font-size:42px}.hero p{color:#cbd5e1;margin-top:10px}.search{text-align:center;margin:25px}.search input{width:80%;max-width:500px;padding:12px;border:none;border-radius:10px}.container{width:90%;margin:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.card{background:#1e293b;border-radius:15px;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-5px)}.card img{width:100%;height:220px;object-fit:cover}.content{padding:15px}.content h3{color:#fb923c}.info{margin-top:8px}.price{margin-top:12px;color:#22c55e;font-size:28px;font-weight:700}.buy{display:block;text-align:center;margin-top:15px;background:#f97316;color:#fff;text-decoration:none;padding:12px;border-radius:8px}.contact{text-align:center;margin-top:50px;padding:40px;background:#111827}.contact h2{margin-bottom:15px}.messenger-btn{display:inline-block;background:#0084ff;color:#fff;text-decoration:none;padding:15px 25px;border-radius:10px;font-weight:700}footer{background:#000;text-align:center;padding:15px}.messenger-float{position:fixed;bottom:20px;right:20px;background:#0084ff;color:#fff;text-decoration:none;padding:15px 20px;border-radius:50px;font-weight:700;box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:9999}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOP ACC GAME MOBILE</title>
+
+<script>
+    // Chặn chuột phải
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Chặn F12 và các tổ hợp phím kiểm tra phần tử
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) return false; // F12
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // Ctrl+U (Xem nguồn trang)
+    }
+</script>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:linear-gradient(90deg,#f97316,#ea580c);
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:38px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+nav{
+    background:#111827;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h2{
+    color:#fb923c;
+    font-size:42px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    margin-top:10px;
+}
+
+.search{
+    text-align:center;
+    margin:25px;
+}
+
+.search input{
+    width:80%;
+    max-width:500px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+}
+
+.content{
+    padding:15px;
+}
+
+.content h3{
+    color:#fb923c;
+}
+
+.info{
+    margin-top:8px;
+}
+
+.price{
+    margin-top:12px;
+    color:#22c55e;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.buy{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    background:#f97316;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:8px;
+}
+
+.contact{
+    text-align:center;
+    margin-top:50px;
+    padding:40px;
+    background:#111827;
+}
+
+.contact h2{
+    margin-bottom:15px;
+}
+
+.messenger-btn{
+    display:inline-block;
+    background:#0084ff;
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+footer{
+    background:black;
+    text-align:center;
+    padding:15px;
+}
+
+/* Messenger nổi */
+
+.messenger-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#0084ff;
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    border-radius:50px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+    z-index:9999;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:4px;
+    padding:4px;
+}
+
+.gallery img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .gallery img{
+        height:90px;
+    }
+
+    .price{
+        font-size:22px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
+
 <header>
-<h1>SHOP ACC VÕ LÂM TK2 MOBILE</h1>
-<p>Thanh toán ITL - Giao dịch uy tín</p>
+    <h1>SHOP ACC GAME MOBILE</h1>
+    <p>Thanh toán ITL - Giao dịch uy tín</p>
 </header>
+
 <nav>
-<a href=#>Trang Chủ</a>
-<a href=#>Acc VIP</a>
-<a href=#>Acc Giá Rẻ</a>
-<a href=#>Liên Hệ</a>
+    <a href="#">Trang Chủ</a>
+    <a href="#">Acc VIP</a>
+    <a href="#">Acc Giá Rẻ</a>
+    <a href="#">Liên Hệ</a>
 </nav>
-<section class=hero>
-<h2>KHO ACC VÕ LÂM TK2 MOBILE</h2>
-<p>Hàng trăm tài khoản chất lượng đang chờ bạn</p>
+
+<section class="hero">
+    <h2>SHOP ACC GAME MOBILE</h2>
+    <p>Hàng trăm tài khoản chất lượng đang chờ bạn</p>
 </section>
-<div class=search>
-<input id=searchBox placeholder="Tìm theo mã acc, server, môn phái...">
+
+<div class="search">
+    <input type="text"
+           id="searchBox"
+           placeholder="Tìm theo mã acc, server, môn phái...">
 </div>
-<div class=container>
-<div class=grid>
-<div class=card>
-<img src=images/acc1.jpg>
-<div class=content>
-<h3>ACC #001</h3>
-<div class=info>Server: S4</div>
-<div class=info>Môn phái: Thiếu Lâm</div>
-<div class=info>Lực chiến: 250.000</div>
-<div class=price>5 ITL</div>
-<a href=https://m.me/SuynKen class=buy>MUA NGAY</a>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+
+<div class="gallery">
+    <img src="images/acc1a.jpg"
+         alt="ACC 1A"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc1b.jpg"
+         alt="ACC 1B"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc1c.jpg"
+         alt="ACC 1C"
+         onclick="window.open(this.src)">
 </div>
+
+    <div class="content">
+        <h3>ACC #001</h3>
+        <div class="info">Server: VLTK2 Mobile-S4</div>
+        <div class="info">Môn phái: Dương Gia Thương</div>
+        <div class="info">Lực chiến: 166.000</div>
+        <div class="price">20 ITL</div>
+        <a href="https://www.facebook.com/SuynKen"
+   target="_blank"
+   class="buy">MUA NGAY</a>
+    </div>
+
 </div>
-<div class=card>
-<img src=images/acc2.jpg>
-<div class=content>
+
+<div class="card">
+
+<div class="gallery">
+    <img src="images/acc2a.jpg"
+         alt="ACC 2A"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc2b.jpg"
+         alt="ACC 2B"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc2c.jpg"
+         alt="ACC 2C"
+         onclick="window.open(this.src)">
+</div>
+
+<div class="content">
 <h3>ACC #002</h3>
-<div class=info>Server: S4</div>
-<div class=info>Môn phái: Nga My</div>
-<div class=info>Lực chiến: 200.000</div>
-<div class=price>10 ITL</div>
-<a href=https://m.me/SuynKen class=buy>MUA NGAY</a>
+<div class="info">Server: VLTK2 Mobile-S4</div>
+<div class="info">Môn phái: Nam Độc</div>
+<div class="info">Lực chiến: 88.000</div>
+<div class="price">15 ITL</div>
+<a href="https://www.facebook.com/SuynKen"
+   target="_blank"
+   class="buy">MUA NGAY</a>
 </div>
+
 </div>
-<div class=card>
-<img src=images/acc3.jpg>
-<div class=content>
+
+<div class="card">
+
+<div class="gallery">
+    <img src="images/acc3a.jpg"
+         alt="ACC 3A"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc3b.jpg"
+         alt="ACC 3B"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc3c.jpg"
+         alt="ACC 3C"
+         onclick="window.open(this.src)">
+</div>
+
+<div class="content">
 <h3>ACC #003</h3>
-<div class=info>Server: S4</div>
-<div class=info>Môn phái: Đường Môn</div>
-<div class=info>Lực chiến: 210.000</div>
-<div class=price>15 ITL</div>
-<a href=https://m.me/SuynKen class=buy>MUA NGAY</a>
+<div class="info">Server: VLTK2 Mobile-S3</div>
+<div class="info">Môn phái: Nga My Đàn</div>
+<div class="info">Lực chiến: 57.000</div>
+<div class="price">10 ITL</div>
+<a href="https://www.facebook.com/SuynKen"
+   target="_blank"
+   class="buy">MUA NGAY</a>
 </div>
+
 </div>
-<div class=card>
-<img src=images/acc4.jpg>
-<div class=content>
+
+<div class="card">
+
+<div class="gallery">
+
+    <img src="images/acc4a.jpg"
+         alt="ACC 4A"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc4b.jpg"
+         alt="ACC 4B"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc4c.jpg"
+         alt="ACC 4C"
+         onclick="window.open(this.src)">
+
+</div>
+
+<div class="content">
 <h3>ACC #004</h3>
-<div class=info>Server: S4</div>
-<div class=info>Môn phái: Thiên Vương</div>
-<div class=info>Lực chiến: 200.000</div>
-<div class=price>20 ITL</div>
-<a href=https://m.me/SuynKen class=buy>MUA NGAY</a>
+<div class="info">Server: TLBB Mobile-S47</div>
+<div class="info">Môn phái: Tiêu Dao</div>
+<div class="info">Lực chiến: 370.000</div>
+<div class="price">20 ITL</div>
+<a href="https://www.facebook.com/SuynKen"
+   target="_blank"
+   class="buy">MUA NGAY</a>
 </div>
+
 </div>
-<div class=card>
-<img src=images/acc5.jpg>
-<div class=content>
+
+<div class="card">
+
+<div class="gallery">
+
+    <img src="images/acc5a.jpg"
+         alt="ACC 5A"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc5b.jpg"
+         alt="ACC 5B"
+         onclick="window.open(this.src)">
+
+    <img src="images/acc5c.jpg"
+         alt="ACC 5C"
+         onclick="window.open(this.src)">
+
+</div>
+
+<div class="content">
 <h3>ACC #005</h3>
-<div class=info>Server: S4</div>
-<div class=info>Môn phái: Cái Bang</div>
-<div class=info>Lực chiến: 250.000</div>
-<div class=price>25 ITL</div>
-<a href=https://m.me/SuynKen class=buy>MUA NGAY</a>
+<div class="info">Server: TLBB Mobile-S47</div>
+<div class="info">Môn phái: Thiếu Lâm</div>
+<div class="info">Lực chiến: 110.000</div>
+<div class="price">5 ITL</div>
+<a href="https://www.facebook.com/SuynKen"
+   target="_blank"
+   class="buy">MUA NGAY</a>
 </div>
+
 </div>
+
 </div>
+
 </div>
-<section class=contact>
-<h2>Liên hệ giao dịch</h2>
-<a href=https://m.me/SuynKen target=_blank class=messenger-btn>
-💬 CHAT FACEBOOK MESSENGER
-</a>
+
+<section class="contact">
+    <h2>Liên hệ giao dịch</h2>
+
+    <a href="https://www.facebook.com/SuynKen"
+       target="_blank"
+       class="messenger-btn">
+       💬 CHAT FACEBOOK MESSENGER
+    </a>
 </section>
+
 <footer>
-© 2026 SHOP ACC VÕ LÂM MOBILE
+© 2026 SHOP ACC GAME MOBILE
 </footer>
-<a href=https://m.me/SuynKen target=_blank class=messenger-float>
-💬 Messenger
+
+<a href="https://www.facebook.com/SuynKen"
+   target="_blank"
+   class="messenger-float">
+   💬 Messenger
 </a>
-<script>const searchBox=document.getElementById("searchBox");searchBox.addEventListener("keyup",(()=>{const e=searchBox.value.toLowerCase();document.querySelectorAll(".card").forEach((o=>{const c=o.innerText.toLowerCase();o.style.display=c.includes(e)?"block":"none"}))}))</script>
+
+<script>
+const searchBox = document.getElementById('searchBox');
+
+if(searchBox){
+    searchBox.addEventListener('keyup',()=>{
+
+        const keyword = searchBox.value.toLowerCase();
+
+        document.querySelectorAll('.card').forEach(card=>{
+
+            const text = card.innerText.toLowerCase();
+
+            card.style.display =
+                text.includes(keyword)
+                ? ''
+                : 'none';
+
+        });
+
+    });
+}
+</script>
+
 </body>
     </html>
