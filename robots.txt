@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suyn12.github.io/shop-accuytin/sitemap.xml
